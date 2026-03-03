@@ -3,17 +3,60 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>ಅಪ್ಪನ ಹುಟ್ಟುಹಬ್ಬ</title>
+<title>ಹೋಳಿ ಹುಣ್ಣಿಮೆ 1965 – ಅಪ್ಪಾ</title>
 
 <style>
 body {
     margin: 0;
     font-family: 'Noto Sans Kannada', sans-serif;
-    scroll-behavior: smooth;
     overflow-x: hidden;
 }
 
-/* Section Design */
+/* 🌕 Glowing Moon */
+.moon {
+    position: fixed;
+    top: 50px;
+    right: 40px;
+    width: 120px;
+    height: 120px;
+    background: radial-gradient(circle, #fff 40%, #fdf6d8 60%, transparent 70%);
+    border-radius: 50%;
+    box-shadow: 0 0 40px 20px rgba(255,255,200,0.6);
+    animation: glow 3s infinite alternate;
+    z-index: 2;
+}
+
+@keyframes glow {
+    from { box-shadow: 0 0 30px 15px rgba(255,255,200,0.5); }
+    to { box-shadow: 0 0 60px 30px rgba(255,255,200,0.9); }
+}
+
+/* 🎈 Balloons */
+.balloon {
+    position: fixed;
+    bottom: -150px;
+    width: 60px;
+    height: 80px;
+    border-radius: 50%;
+    animation: floatUp linear infinite;
+    z-index: 1;
+}
+
+@keyframes floatUp {
+    0% { transform: translateY(0); }
+    100% { transform: translateY(-120vh); }
+}
+
+/* 🎆 Canvas */
+canvas {
+    position: fixed;
+    top: 0;
+    left: 0;
+    pointer-events: none;
+    z-index: 9999;
+}
+
+/* Sections */
 section {
     min-height: 100vh;
     display: flex;
@@ -25,25 +68,14 @@ section {
     color: white;
 }
 
-/* Colorful Backgrounds */
 .sec1 { background: linear-gradient(45deg, #ff6a00, #ee0979); }
 .sec2 { background: linear-gradient(45deg, #00c6ff, #0072ff); }
 .sec3 { background: linear-gradient(45deg, #11998e, #38ef7d); }
 .sec4 { background: linear-gradient(45deg, #fc466b, #3f5efb); }
 
-h1 {
-    font-size: 28px;
-    animation: fadeIn 2s ease-in-out;
-}
+h1 { font-size: 28px; }
+p { font-size: 18px; max-width: 95%; line-height: 1.7; }
 
-p {
-    font-size: 18px;
-    max-width: 95%;
-    line-height: 1.7;
-    animation: slideUp 1.5s ease-in-out;
-}
-
-/* Gallery */
 .gallery {
     display: flex;
     flex-wrap: wrap;
@@ -53,32 +85,9 @@ p {
 .gallery img {
     width: 90%;
     max-width: 250px;
-    height: auto;
     border-radius: 20px;
     margin: 10px;
-    object-fit: cover;
     box-shadow: 0 10px 25px rgba(0,0,0,0.4);
-    transition: transform 0.5s;
-}
-
-.gallery img:hover {
-    transform: scale(1.05);
-}
-
-/* Animations */
-@keyframes fadeIn {
-    from {opacity: 0;}
-    to {opacity: 1;}
-}
-
-@keyframes slideUp {
-    from {transform: translateY(30px); opacity:0;}
-    to {transform: translateY(0); opacity:1;}
-}
-
-/* Buttons */
-.button-group {
-    margin-top: 20px;
 }
 
 button {
@@ -96,6 +105,9 @@ button {
 
 <body>
 
+<div class="moon"></div>
+<canvas id="lights"></canvas>
+
 <!-- 🎵 MUSIC -->
 <audio id="bgMusic" loop>
     <source src="music.mp3" type="audio/mpeg">
@@ -103,19 +115,15 @@ button {
 
 <section class="sec1">
     <h1>🌕 ಹೋಳಿ ಹುಣ್ಣಿಮೆಯಂದು ಜನಿಸಿದ ನಮ್ಮ ಹೆಮ್ಮೆ – ಅಪ್ಪಾ 🌕</h1>
-
-    <div class="button-group">
-        <button onclick="playMusic()">▶ ಸಂಗೀತ ಪ್ರಾರಂಭಿಸಿ</button>
-        <button onclick="stopMusic()">⏸ ಸಂಗೀತ ನಿಲ್ಲಿಸಿ</button>
-    </div>
+    <button onclick="playMusic()">▶ ಸಂಗೀತ ಪ್ರಾರಂಭಿಸಿ</button>
+    <button onclick="stopMusic()">⏸ ಸಂಗೀತ ನಿಲ್ಲಿಸಿ</button>
 </section>
 
 <section class="sec2">
     <p>
-        1965ರಲ್ಲಿ ಹೋಳಿ ಹುಣ್ಣಿಮೆಯ ಶುಭ ದಿನದಲ್ಲಿ ಜನಿಸಿದ ನಮ್ಮ ಪ್ರಿಯ ಅಪ್ಪಾ ❤️ <br><br>
-        ಬಣ್ಣಗಳ ಹಬ್ಬದ ದಿನ ಜನಿಸಿದ ನೀವು ನಮ್ಮ ಜೀವನಕ್ಕೂ ಅನೇಕ ಬಣ್ಣಗಳನ್ನು ತಂದಿರಿ. <br><br>
-        ನಿಮ್ಮ ಪ್ರೀತಿ, ನಿಮ್ಮ ಮಾರ್ಗದರ್ಶನ ಮತ್ತು ನಿಮ್ಮ ತ್ಯಾಗ ನಮ್ಮ ಕುಟುಂಬದ ಶಕ್ತಿ. <br><br>
-        ನಮ್ಮ ಕುಟುಂಬದ ಆಧಾರಸ್ತಂಭವಾಗಿ ನಿಂತಿದ್ದಕ್ಕಾಗಿ ನಾವು ಸದಾ ಕೃತಜ್ಞರಾಗಿದ್ದೇವೆ.
+        1965ರಲ್ಲಿ ಹೋಳಿ ಹುಣ್ಣಿಮೆಯಂದು ಜನಿಸಿದ ನಮ್ಮ ಪ್ರಿಯ ಅಪ್ಪಾ ❤️ <br><br>
+        ನೀವು ನಮ್ಮ ಜೀವನಕ್ಕೆ ಅನೇಕ ಬಣ್ಣಗಳನ್ನು ತಂದಿರಿ. <br><br>
+        ನಿಮ್ಮ ಪ್ರೀತಿ, ಮಾರ್ಗದರ್ಶನ ಮತ್ತು ತ್ಯಾಗ ನಮ್ಮ ಶಕ್ತಿ.
     </p>
 </section>
 
@@ -131,23 +139,78 @@ button {
 <section class="sec4">
     <h1>🎂 ಹಾರ್ದಿಕ ಹುಟ್ಟುಹಬ್ಬದ ಶುಭಾಶಯಗಳು 🎂</h1>
     <p>
-        ಹೋಳಿ ಹುಣ್ಣಿಮೆಯ ಬೆಳಕಿನಂತೆ ನಿಮ್ಮ ಜೀವನವೂ ಸದಾ ಪ್ರಕಾಶಮಾನವಾಗಿರಲಿ. <br><br>
         ಆರೋಗ್ಯ, ಸಂತೋಷ ಮತ್ತು ಶಾಂತಿ ಸದಾ ನಿಮ್ಮೊಂದಿಗೆ ಇರಲಿ ❤️ <br><br>
         ನಿಮ್ಮ ಮಗ – ರಾಘವೇಂದ್ರ ❤️
     </p>
 </section>
 
 <script>
+/* 🎵 Music */
 var music = document.getElementById("bgMusic");
+function playMusic(){ music.play(); }
+function stopMusic(){ music.pause(); music.currentTime = 0; }
 
-function playMusic() {
-    music.play();
+/* 🎈 Generate Balloons */
+for (var i = 0; i < 12; i++) {
+    var balloon = document.createElement("div");
+    balloon.className = "balloon";
+    balloon.style.left = Math.random() * 100 + "vw";
+    balloon.style.background = "hsl(" + Math.random()*360 + ",70%,60%)";
+    balloon.style.animationDuration = (6 + Math.random()*6) + "s";
+    document.body.appendChild(balloon);
 }
 
-function stopMusic() {
-    music.pause();
-    music.currentTime = 0;
+/* 🎆 Color Burst Effect */
+var canvas = document.getElementById("lights");
+var ctx = canvas.getContext("2d");
+
+function resizeCanvas(){
+    canvas.width = window.innerWidth;
+    canvas.height = window.innerHeight;
 }
+resizeCanvas();
+window.addEventListener("resize", resizeCanvas);
+
+var particles = [];
+
+function createParticles(x,y){
+    for(var i=0;i<40;i++){
+        particles.push({
+            x:x,
+            y:y,
+            radius:Math.random()*6+3,
+            color:"hsl("+Math.random()*360+",100%,60%)",
+            speedX:(Math.random()-0.5)*10,
+            speedY:(Math.random()-0.5)*10,
+            life:80
+        });
+    }
+}
+
+function animate(){
+    ctx.clearRect(0,0,canvas.width,canvas.height);
+    for(var i=0;i<particles.length;i++){
+        var p=particles[i];
+        ctx.beginPath();
+        ctx.arc(p.x,p.y,p.radius,0,Math.PI*2);
+        ctx.fillStyle=p.color;
+        ctx.fill();
+        p.x+=p.speedX;
+        p.y+=p.speedY;
+        p.life--;
+        if(p.life<=0){particles.splice(i,1);i--;}
+    }
+    requestAnimationFrame(animate);
+}
+animate();
+
+document.addEventListener("click",function(e){
+    createParticles(e.clientX,e.clientY);
+});
+document.addEventListener("touchstart",function(e){
+    var touch=e.touches[0];
+    createParticles(touch.clientX,touch.clientY);
+});
 </script>
 
 </body>
