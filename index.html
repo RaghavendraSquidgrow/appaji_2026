@@ -15,7 +15,7 @@ body {
 
 /* Section Design */
 section {
-    min-height: 100vh;   /* changed from height to min-height */
+    min-height: 100vh;
     display: flex;
     flex-direction: column;
     justify-content: center;
@@ -25,7 +25,7 @@ section {
     color: white;
 }
 
-/* Different Colorful Sections */
+/* Colorful Backgrounds */
 .sec1 { background: linear-gradient(45deg, #ff6a00, #ee0979); }
 .sec2 { background: linear-gradient(45deg, #00c6ff, #0072ff); }
 .sec3 { background: linear-gradient(45deg, #11998e, #38ef7d); }
@@ -76,30 +76,38 @@ p {
     to {transform: translateY(0); opacity:1;}
 }
 
+/* Buttons */
+.button-group {
+    margin-top: 20px;
+}
+
 button {
-    padding: 12px 25px;
+    padding: 12px 20px;
     font-size: 16px;
     border: none;
     border-radius: 30px;
     background: white;
     color: #333;
     cursor: pointer;
-    margin-top: 20px;
+    margin: 5px;
 }
 </style>
 </head>
 
 <body>
 
+<!-- 🎵 MUSIC -->
 <audio id="bgMusic" loop>
     <source src="music.mp3" type="audio/mpeg">
 </audio>
 
 <section class="sec1">
     <h1>🌕 ಹೋಳಿ ಹುಣ್ಣಿಮೆಯಂದು ಜನಿಸಿದ ನಮ್ಮ ಹೆಮ್ಮೆ – ಅಪ್ಪಾ 🌕</h1>
-    <button onclick="document.getElementById('bgMusic').play()">
-        🎵 ಸಂಗೀತವನ್ನು ಪ್ರಾರಂಭಿಸಿ
-    </button>
+
+    <div class="button-group">
+        <button onclick="playMusic()">▶ ಸಂಗೀತ ಪ್ರಾರಂಭಿಸಿ</button>
+        <button onclick="stopMusic()">⏸ ಸಂಗೀತ ನಿಲ್ಲಿಸಿ</button>
+    </div>
 </section>
 
 <section class="sec2">
@@ -107,7 +115,7 @@ button {
         1965ರಲ್ಲಿ ಹೋಳಿ ಹುಣ್ಣಿಮೆಯ ಶುಭ ದಿನದಲ್ಲಿ ಜನಿಸಿದ ನಮ್ಮ ಪ್ರಿಯ ಅಪ್ಪಾ ❤️ <br><br>
         ಬಣ್ಣಗಳ ಹಬ್ಬದ ದಿನ ಜನಿಸಿದ ನೀವು ನಮ್ಮ ಜೀವನಕ್ಕೂ ಅನೇಕ ಬಣ್ಣಗಳನ್ನು ತಂದಿರಿ. <br><br>
         ನಿಮ್ಮ ಪ್ರೀತಿ, ನಿಮ್ಮ ಮಾರ್ಗದರ್ಶನ ಮತ್ತು ನಿಮ್ಮ ತ್ಯಾಗ ನಮ್ಮ ಕುಟುಂಬದ ಶಕ್ತಿ. <br><br>
-        ನಮ್ಮ ಜೀವನದ ಆಧಾರಸ್ತಂಭವಾಗಿ ನಿಂತಿದ್ದಕ್ಕಾಗಿ ನಾವು ಸದಾ ಕೃತಜ್ಞರಾಗಿದ್ದೇವೆ.
+        ನಮ್ಮ ಕುಟುಂಬದ ಆಧಾರಸ್ತಂಭವಾಗಿ ನಿಂತಿದ್ದಕ್ಕಾಗಿ ನಾವು ಸದಾ ಕೃತಜ್ಞರಾಗಿದ್ದೇವೆ.
     </p>
 </section>
 
@@ -128,6 +136,19 @@ button {
         ನಿಮ್ಮ ಮಗ – ರಾಘವೇಂದ್ರ ❤️
     </p>
 </section>
+
+<script>
+var music = document.getElementById("bgMusic");
+
+function playMusic() {
+    music.play();
+}
+
+function stopMusic() {
+    music.pause();
+    music.currentTime = 0;
+}
+</script>
 
 </body>
 </html>
