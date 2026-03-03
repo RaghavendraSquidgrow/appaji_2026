@@ -1,0 +1,139 @@
+<!DOCTYPE html>
+<html lang="kn">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>ಅಪ್ಪನ ಹುಟ್ಟುಹಬ್ಬ</title>
+
+<style>
+body {
+    margin: 0;
+    font-family: 'Noto Sans Kannada', sans-serif;
+    scroll-behavior: smooth;
+    overflow-x: hidden;
+}
+
+/* Section Design */
+section {
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    padding: 20px;
+    color: white;
+}
+
+/* Different Colorful Sections */
+.sec1 { background: linear-gradient(45deg, #ff6a00, #ee0979); }
+.sec2 { background: linear-gradient(45deg, #00c6ff, #0072ff); }
+.sec3 { background: linear-gradient(45deg, #11998e, #38ef7d); }
+.sec4 { background: linear-gradient(45deg, #fc466b, #3f5efb); }
+
+h1 {
+    font-size: 40px;
+    animation: fadeIn 3s ease-in-out;
+}
+
+p {
+    font-size: 22px;
+    max-width: 800px;
+    animation: slideUp 2s ease-in-out;
+    line-height: 1.6;
+}
+
+/* Gallery */
+.gallery img {
+    width: 220px;
+    height: 220px;
+    border-radius: 20px;
+    margin: 15px;
+    object-fit: cover;
+    box-shadow: 0 10px 25px rgba(0,0,0,0.4);
+    transition: transform 0.5s;
+}
+
+.gallery img:hover {
+    transform: scale(1.1);
+}
+
+/* Animations */
+@keyframes fadeIn {
+    from {opacity: 0;}
+    to {opacity: 1;}
+}
+
+@keyframes slideUp {
+    from {transform: translateY(50px); opacity:0;}
+    to {transform: translateY(0); opacity:1;}
+}
+
+button {
+    padding: 15px 30px;
+    font-size: 18px;
+    border: none;
+    border-radius: 30px;
+    background: white;
+    color: #333;
+    cursor: pointer;
+}
+</style>
+</head>
+
+<body>
+
+<!-- 🎵 MUSIC SECTION -->
+<audio id="bgMusic" loop>
+    <source src="music.mp3" type="audio/mpeg">
+</audio>
+
+<section class="sec1">
+    <h1>🌕 ಹೋಳಿ ಹುಣ್ಣಿಮೆಯಂದು ಜನಿಸಿದ ನಮ್ಮ ಹೆಮ್ಮೆ – ಅಪ್ಪಾ 🌕</h1>
+    <button onclick="document.getElementById('bgMusic').play()">
+        🎵 ಸಂಗೀತವನ್ನು ಪ್ರಾರಂಭಿಸಿ
+    </button>
+</section>
+
+<section class="sec2">
+    <p>
+        1965ರಲ್ಲಿ ಹೋಳಿ ಹುಣ್ಣಿಮೆಯ ಶುಭ ದಿನದಲ್ಲಿ ಜನಿಸಿದ ನಮ್ಮ ಪ್ರಿಯ ಅಪ್ಪಾ ❤️ <br><br>
+
+        ಬಣ್ಣಗಳ ಹಬ್ಬದ ದಿನ ಜನಿಸಿದ ನೀವು  
+        ನಮ್ಮ ಜೀವನಕ್ಕೂ ಅನೇಕ ಬಣ್ಣಗಳನ್ನು ತಂದಿರಿ. <br><br>
+
+        ನಿಮ್ಮ ಪ್ರೀತಿ ನಮ್ಮ ಜೀವನಕ್ಕೆ ಉಷ್ಣತೆ,  
+        ನಿಮ್ಮ ಮಾರ್ಗದರ್ಶನ ನಮ್ಮ ಆಶೆ,  
+        ನಿಮ್ಮ ಶ್ರಮ ಮತ್ತು ತ್ಯಾಗವು ನಮ್ಮ ಕುಟುಂಬದ ಶಕ್ತಿ. <br><br>
+
+        1965ರಿಂದ ಇಂದಿನವರೆಗೂ  
+        ನಮ್ಮ ಕುಟುಂಬದ ಆಧಾರಸ್ತಂಭವಾಗಿ ನಿಂತಿದ್ದಕ್ಕಾಗಿ  
+        ನಾವು ಸದಾ ನಿಮ್ಮಿಗೆ ಕೃತಜ್ಞರಾಗಿದ್ದೇವೆ.
+    </p>
+</section>
+
+<section class="sec3">
+    <h1>📸 ನಮ್ಮ ಸ್ಮರಣೀಯ ಕ್ಷಣಗಳು</h1>
+    <div class="gallery">
+        <img src="image1.jpg">
+        <img src="image2.jpg">
+        <img src="image3.jpg">
+    </div>
+</section>
+
+<section class="sec4">
+    <h1>🎂 ಹಾರ್ದಿಕ ಹುಟ್ಟುಹಬ್ಬದ ಶುಭಾಶಯಗಳು 🎂</h1>
+    <p>
+        ಹೋಳಿ ಹುಣ್ಣಿಮೆಯ ಬೆಳಕಿನಂತೆ  
+        ನಿಮ್ಮ ಜೀವನವೂ ಸದಾ ಪ್ರಕಾಶಮಾನವಾಗಿರಲಿ. <br><br>
+
+        ಆರೋಗ್ಯ, ಸಂತೋಷ ಮತ್ತು ಶಾಂತಿ  
+        ಸದಾ ನಿಮ್ಮೊಂದಿಗೆ ಇರಲಿ ❤️ <br><br>
+
+        ನಿಮ್ಮ ಮಗ – ರಾಘವೇಂದ್ರ ❤️  
+        ನಿಮ್ಮ ಆಶೀರ್ವಾದವೇ ನನ್ನ ದೊಡ್ಡ ಶಕ್ತಿ.
+    </p>
+</section>
+
+</body>
+</html>
